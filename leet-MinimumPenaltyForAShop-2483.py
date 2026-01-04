@@ -28,7 +28,6 @@ def main():
     # print(thingy.bestClosingTime()) # 
 
     assert thingy.bestClosingTime("YYNY") == 2, "Test Case 1 failed"
-    # assert thingy.maximumHappinessSum([1, 2, 3], 2) == 4, "Test qase 1 failed"
     
 
 if __name__ == "__main__":
