@@ -9,10 +9,11 @@ class Solution:
         maxlen: int = max(len(a), len(b)) + 1
         a = a.zfill(maxlen)
         b = b.zfill(maxlen)
-        result = self.addTheBinary(a, b).lstrip("0")
-
+        result = self._addTheBinary(a, b).lstrip("0")
+        if result == "":
+            result = "0"
         return result
-    def addTheBinary(self, a: str, b:str) -> str:
+    def _addTheBinary(self, a: str, b:str) -> str:
         # reverse the strings
         a = a[::-1]
         b = b[::-1]
@@ -41,9 +42,14 @@ class Solution:
                     carry = True
         return retVal[::1]
 
-thing = Solution()
-a: str = "0010"
-b: str = "1011"
 
+def main():
+    thing = Solution()
+    # assert thing.addBinary("11", "1") == "100", "Test Case Failed"
+    # assert thing.addBinary("1010", "1011") == "10101", "Test Case Failed"
+    # assert thing.addBinary("", "") == "", "Test Case Failed"
+    # assert thing.addBinary("", "1001") == "1001", "Test Case Failed"
+    assert thing.addBinary("0", "0") == "0", "Test Case Failed"
 
-print(thing.addBinary(a,b))
+if __name__ == "__main__":
+    main()
